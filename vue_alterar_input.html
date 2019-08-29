@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>Your Website</title>
+</head>
+
+<body>
+
+<!-- Aqui temos a chamada da função para alterar 
+dinamicamente o primeiro campo input -->
+<div id="app">
+  <input type="text" v-model="name"/>
+  <input type="text" id="surname" value="Lothbrok" />
+  <button @click="saveSurname"> Salvar a Pesquisa </button>
+  <output> {{computedFullName}}</output>
+</div>
+
+<!-- Aqui temos a escrita da função Vue no script-->
+<script>
+    let surname = 'Lothbrok'
+    new Vue({
+        el: '#app',
+        data: {
+            name: 'Ragnar'
+        },
+        computed: {
+            computedFullName () {
+                return this.name + ' ' + surname
+            }
+        },
+        methods: {
+            saveSurname () {
+             surname = this.$el.querySelector('#surname').value
+            }
+        }
+    })
+</script>
+	
+</body>
+
+</html>
