@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    
+
+	<title>Your Website</title>
+</head>
+
+<body id="trocar" onClick="mudarCor()">
+    
+    <p> Me mude de cor ao clicar aqui =D</p>
+
+    <script type="text/Javascript">
+    
+    var cores = ['blue', 'red', 'yellow'];
+
+    function mudarCor() {
+        var el = document.getElementById('trocar');
+        var proximoIndex = Math.floor(Math.random() * cores.length);
+        var cor = cores[proximoIndex];
+        el.style.backgroundColor = cor;
+  }
+    </script>
+</body>
+
+</html>
